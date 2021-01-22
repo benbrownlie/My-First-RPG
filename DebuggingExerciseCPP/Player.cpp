@@ -1,10 +1,26 @@
+#include "player.h"
 
+Player::Player(const char* name, float health, float damage, float defense) :
+    Character(name, health, damage, defense)
+{
+
+}
+
+void Player::equipWeapon(Item item)
+{
+    m_weapon = item;
+}
+
+void Player::equipShield(Item item)
+{
+    m_shield = item;
+}
 
 float Player::takeDamage(float damage)
 {
     float totalDamage = damage - m_shield.getStatusBoost();
 
-    return takeDamage(damage);
+    return Character::takeDamage(totalDamage);
 }
 
 float Player::attack(Character* other)

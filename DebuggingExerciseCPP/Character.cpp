@@ -20,7 +20,7 @@ float Character::takeDamage(float damage)
 		totalDamage = 0;
 
 	m_health -= totalDamage;
-	return damage;
+	return totalDamage;
 }
 
 float Character::attack(Character* other)
